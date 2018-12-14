@@ -42,3 +42,5 @@ idleTimeout(15, () => {
     history.push('/logout');
 });
 ```
+
+![picture alt](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Thats_all_folks.svg/795px-Thats_all_folks.svg.png "That's all")
