@@ -33,7 +33,9 @@ Requires 2 parameters:
 * Callback function to execute on timeout
 
 
-idleTimout(minutes_to_timeout, callback)
+idleTimeout(minutes_to_timeout, callback)
+
+#### Example:
 
 ```javascript
 idleTimeout(15, () => {
