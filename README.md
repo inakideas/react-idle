@@ -2,34 +2,40 @@
 
 This script can run a callback function after some time of idle
 
-## Requires
+### Requires
 
-· Local storage
-· Be compiled
+* Local storage
+* Be compiled
 
-## It listens to:
+### It listens to:
 
-· Click
-· Mouseover
-· Mouseout
-· Keyup
-· Keydown
-· Keypress
+* Click
+* Mouseover
+* Mouseout
+* Keyup
+* Keydown
+* Keypress
 
 
 ## USAGE
 
 ### Import:
 
-```
+```javascript
 import { idleTimeout } from [donde esté]/'idle'
 ```
 
 ### Run
 
+Requires 2 parameters:
+
+* Minutes to timeout (int)
+* Callback function to execute on timeout
+
+
 idleTimout(minutes_to_timeout, callback)
 
-```
+```javascript
 idleTimeout(15, () => {
     history.push('/logout');
 });
