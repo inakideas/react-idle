@@ -1,18 +1,22 @@
-const MINUTES_UNITL_AUTO_LOGOUT = 1 // in mins
-const CHECK_INTERVAL = 500 // in ms
+const CHECK_INTERVAL = 1500 // in ms
 const STORE_KEY =  'lastAction';
 
-export function idleTimeout(callback){
+export function idleTimeout(minutes, callback){
+
+    const MINUTES_UNITL_AUTO_LOGOUT = minutes
 
     initListener();
 
-    setInterval(() => {
+    const checker = setInterval(() => {
 
         const now = Date.now();
         const timeleft = getLastAction() + MINUTES_UNITL_AUTO_LOGOUT * 60 * 1000;
         const diff = timeleft - now;
         const isTimeout = diff < 0;
-        if (isTimeout) callback();
+        if (isTimeout){
+            clearInterval(checker)
+            callback();
+        }
 
     },CHECK_INTERVAL)
 
